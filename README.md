@@ -723,9 +723,8 @@ These screenshots and the physical prototype photo are stored in [`docs/assets/`
 ### Project links
 
 - **GitHub repository:** this repository.
-- **Demo video:** add a public demo link after publication.
-- **Project write-up:** add the DEV Community article URL after publication.
-- **DevRelay session:** add a public session link only if one is successfully created and safe to share.
+- **Demo video:** https://drive.google.com/file/d/1a0IfYKr36RxrGsVMgkYlzJ8Ko_f21iWY/view?usp=drivesdk
+- **Project write-up:** https://dev.to/adnannagariya/hacktober-fest-2026-project-j83
 - **License:** add a root-level `LICENSE` file after the team selects a license.
 ---
 
