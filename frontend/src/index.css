@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* Alpine Observatory Signature Foundation */
+  --color-bg: #F3F2EC;
+  --color-bg-elev: #FFFEFA;
+  --color-panel: #FFFEFA;
+  --color-panel-2: #E8EDE6;
+  --color-panel-hover: #DFE5DC;
+  --color-line: #DDE2D9;
+  --color-line-2: #CAD3C9;
+  --color-fg: #202D29;
+  --color-fg-2: #4D5B55;
+  --color-fg-3: #718078;
+
+  /* Forest-Charcoal Sidebar Surfaces */
+  --color-sidebar: #172E2A;
+  --color-sidebar-surface: #213D36;
+  --color-sidebar-text: #F3F2EC;
+  --color-sidebar-muted: #83968E;
+  --color-sidebar-line: #294740;
+
+  /* Brand Accents & Analytical Tones */
+  --color-deep-forest: #24594D;
+  --color-evergreen: #2D6A57;
+  --color-pale-evergreen: #E5EEE7;
+  --color-pale-sage: #E5EEE7;
+  --color-copper: #D9895B;
+  --color-pale-copper: #F7E8DE;
+  --color-coral-tg: #D9895B;
+  --color-pale-coral: #F7E8DE;
+  --color-instrument-blue: #477BB4;
+  --color-slate-blue: #477BB4;
+  --color-pale-blue: #E7EFF8;
+  --color-teal-tg: #2D9187;
+  --color-antique-gold: #C59A2B;
+  --color-pale-gold: #F5EED8;
+
+  /* Semantic status colors */
+  --color-safe: #2D6A57;
+  --color-watch: #C59A2B;
+  --color-warning: #D9895B;
+  --color-critical: #C52838;
+
+  /* Legacy mappings */
+  --color-navy-tg: #202D29;
+  --color-cyan-tg: #477BB4;
+  --color-emerald-tg: #2D6A57;
+  --color-gold-tg: #C59A2B;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.015em;
+}
+
+.font-script {
+  font-family: "Segoe Script", "Bradley Hand", "Comic Sans MS", cursive;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* Scientific alpine terrain contour background */
+.terrain-bg {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(1200px 700px at 90% -10%, rgba(36, 89, 77, 0.045), transparent 60%),
+    radial-gradient(900px 550px at -5% 105%, rgba(217, 137, 91, 0.04), transparent 60%);
+}
+
+.contour {
+  background-image: repeating-radial-gradient(ellipse at 75% 25%, transparent 0 20px, rgba(32, 45, 41, 0.02) 20px 21px);
+}
+
+/* Polished chalk card panels with subtle elevation */
+.panel {
+  background: var(--color-panel);
+  border: 1px solid var(--color-line);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(23, 46, 42, 0.04), 0 1px 2px -1px rgba(23, 46, 42, 0.02);
+}
+
+/* Deep forest focal panel */
+.panel-forest {
+  background: #19332D;
+  border: 1px solid #284D44;
+  color: #F3F2EC;
+  box-shadow: 0 4px 20px -2px rgba(23, 46, 42, 0.18), 0 2px 6px -1px rgba(23, 46, 42, 0.12);
+}
+
+/* Light scrollbars matching warm limestone canvas */
+* { scrollbar-width: thin; scrollbar-color: #CAD3C9 transparent; }
+*::-webkit-scrollbar { width: 7px; height: 7px; }
+*::-webkit-scrollbar-thumb { background: #CAD3C9; border-radius: 8px; }
+*::-webkit-scrollbar-thumb:hover { background: #B6C0B5; }
+
+/* Focus */
+:focus-visible { outline: 2px solid var(--color-evergreen); outline-offset: 2px; border-radius: 4px; }
+
+/* Animations */
+@keyframes tg-fade-up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes tg-pulse-dot { 0%, 100% { box-shadow: 0 0 0 0 currentColor; opacity: 1; } 70% { box-shadow: 0 0 0 5px transparent; opacity: 0.85; } }
+@keyframes tg-scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(400%); } }
+@keyframes tg-shimmer { 0% { background-position: -400px 0; } 100% { background-position: 400px 0; } }
+@keyframes tg-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+.fade-up { animation: tg-fade-up 0.35s ease-out both; }
+.live-dot { animation: tg-pulse-dot 2.4s ease-out infinite; }
+.scanline { animation: tg-scan 6s linear infinite; }
+.rec-blink { animation: tg-blink 1.6s ease-in-out infinite; }
+
+.skeleton {
+  background: linear-gradient(90deg, #E8EDE6 0px, #DDE2D9 40px, #E8EDE6 80px);
+  background-size: 800px 100%;
+  animation: tg-shimmer 1.6s linear infinite;
+}
+
+.value-transition { transition: color 0.4s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* Light Recharts tweaks */
+.recharts-tooltip-cursor { stroke: #CAD3C9; stroke-dasharray: 4 4; }
+.recharts-cartesian-grid line { stroke: #DDE2D9; }

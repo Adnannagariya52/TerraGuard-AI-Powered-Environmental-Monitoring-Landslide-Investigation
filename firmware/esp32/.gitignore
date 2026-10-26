@@ -1,0 +1,7 @@
+secrets.h
+*.elf
+*.bin
+*.hex
+*.map
+.vscode/
+.idea/

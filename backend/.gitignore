@@ -1,0 +1,8 @@
+# Local runtime state and secrets
+.venv/
+__pycache__/
+*.py[cod]
+.env
+*.db
+reports/
+*.log
